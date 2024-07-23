@@ -27,13 +27,11 @@ public class nini_game {
         int a = sc.nextInt(); // 인원수
         String b = sc.next(); // 게임종류선택
         String[] c = new String[a]; // 인원수에 맞게 이름적기
-        List<String> name = Arrays.asList(c);
 
+        HashSet<String> newName = new HashSet<>();
         for (int i = 0; i < a; i++) {
-            c[i] = sc.next();
+            newName.add(sc.next());
         }
-        // JAVA 8 이상 제공되는 Stream 사용.
-        List<String> newName = name.stream().distinct().collect(Collectors.toList());
 
         int d = newName.toArray().length;
         switch (b) {
